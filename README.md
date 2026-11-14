@@ -155,6 +155,8 @@ Things that caught us:
 
 With the three packages and the Box64 line from above in place, add libogg to the preload and `-crossplay` to the arguments.
 
+**All three pieces are needed, and one of them means building Box64 yourself.** We tried them one at a time: the packages alone leave 14 Ogg functions missing; packages plus the preload leave one (`ogg_stream_pageout_fill`), and the library still fails to load; only with the Box64 line as well does it load. So a packaged Box64, or a Docker image that ships one, can't do crossplay until that line is in Box64 itself.
+
 Vanilla: add this line to `run.sh` before `exec`:
 
 ```bash
