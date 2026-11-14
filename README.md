@@ -6,6 +6,14 @@ Valheim's dedicated server is an x86-64 program. This is how to run it on a Rasp
 
 Worked out in November 2026 on Valheim 1.0.21, by [aronkleinhans](https://github.com/aronkleinhans) with Claude (Anthropic's AI model, in Claude Code) doing the heavy lifting: the setup, the crash hunt and the crossplay fix were worked out in one long session on the Pi itself. The start scripts are in [`scripts/`](scripts/), the Box64 change in [`box64-libogg-pageout_fill.patch`](box64-libogg-pageout_fill.patch).
 
+## How much of this you need
+
+| You want | What it takes | Sections |
+| --- | --- | --- |
+| A vanilla server, friends joining over Steam | Box64 and the server files. Nothing special. (On a Pi 5: the 4K kernel.) | 1–5 |
+| Mods | The same, plus one setting: `BOX64_LD_PRELOAD` in place of BepInEx's `LD_PRELOAD` | 6 |
+| Crossplay | Two packages, a preload, and a one-line change that means building Box64 yourself | 7 |
+
 ## What you need to know first
 
 Each of these fails silently or with a misleading error.
