@@ -203,6 +203,17 @@ export GC_MARKERS=1 GC_NPROCS=1                      # in the run script
 sed -i '/^gc-max-time-slice/d' valheim_server_Data/boot.config
 ```
 
+## See also
+
+Others are working on the same thing, and some of it overlaps with this guide:
+
+- [Box64 issue #4403](https://github.com/ptitSeb/box64/issues/4403) (open, September 2026): on a Pi 4 with recent Box64, crossplay's join-code registration never completes. On the setup above it did complete (`registered with join code`); we don't know which difference matters.
+- [zhmarvi/valheim-arm64](https://github.com/zhmarvi/valheim-arm64): a container and Kubernetes manifests, vanilla, also fetched with DepotDownloader.
+- [benjamin-wiemann/valheim-server-docker-arm64](https://github.com/benjamin-wiemann/valheim-server-docker-arm64): a Docker image with BepInEx support.
+- [husjon/valheim_server_oci_setup](https://github.com/husjon/valheim_server_oci_setup): Valheim on Oracle Cloud's ARM machines.
+
+None of these mention the 16K page size, which is specific to the Pi 5's default kernel (a Pi 4 and most ARM servers already use 4K pages).
+
 ## Not covered
 
 - Running it as a systemd service, automatic updates, off-machine backups.
