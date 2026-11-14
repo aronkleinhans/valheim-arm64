@@ -12,7 +12,9 @@ Worked out in November 2026 on Valheim 1.0.21, by [aronkleinhans](https://github
 | --- | --- | --- |
 | A vanilla server, friends joining over Steam | Box64 and the server files. Nothing special. (On a Pi 5: the 4K kernel.) | 1–5 |
 | Mods | The same, plus one setting: `BOX64_LD_PRELOAD` in place of BepInEx's `LD_PRELOAD` | 6 |
-| Crossplay | Two packages, a preload, and a one-line change that means building Box64 yourself | 7 |
+| Crossplay, **vanilla or modded** | Two packages, a preload, and a one-line change that means building Box64 yourself | 7 |
+
+Crossplay is separate from mods: the crossplay library is part of the server itself and fails to load on a plain vanilla server just the same (`DllNotFoundException: libParty.so` was in our very first vanilla log).
 
 ## What you need to know first
 
