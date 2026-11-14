@@ -1,0 +1,13 @@
+diff --git a/src/wrapped/wrappedlibogg_private.h b/src/wrapped/wrappedlibogg_private.h
+index b0abdbb..9c1f4ba 100644
+--- a/src/wrapped/wrappedlibogg_private.h
++++ b/src/wrapped/wrappedlibogg_private.h
+@@ -65,7 +65,7 @@ GO(ogg_stream_packetout, iFpp)
+ GO(ogg_stream_packetpeek, iFpp)
+ GO(ogg_stream_pagein, iFpp)
+ GO(ogg_stream_pageout, iFpp)
+-//GO(ogg_stream_pageout_fill, 
++GO(ogg_stream_pageout_fill, iFppi)
+ GO(ogg_stream_reset, iFp)
+ GO(ogg_stream_reset_serialno, iFpi)
+ GO(ogg_sync_buffer, pFpl)
