@@ -26,6 +26,8 @@ Each of these fails silently or with a misleading error.
 
 **What was and wasn't tested:** one player connected at a time, over Steam. Crossplay was taken as far as the server joining the PlayFab network and registering a join code; nobody joined by code. The numbers further down are from that setup. Treat "enough for a handful of friends" as an estimate.
 
+**If you try it, say how it went.** Especially a join by crossplay code (console or Game Pass), which we had no device to test, and anything with several players on at once. [Open an issue](https://github.com/aronkleinhans/valheim-arm64/issues) with what worked or what broke.
+
 ## 1. Page size: the 4K kernel
 
 Check what you have:
