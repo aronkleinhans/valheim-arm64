@@ -207,7 +207,7 @@ sed -i '/^gc-max-time-slice/d' valheim_server_Data/boot.config
 
 Others are working on the same thing, and some of it overlaps with this guide:
 
-- [Box64 issue #4403](https://github.com/ptitSeb/box64/issues/4403) (open, September 2026): on a Pi 4 with recent Box64, crossplay's join-code registration never completes. On the setup above it did complete (`registered with join code`); we don't know which difference matters.
+- [Box64 issue #4403](https://github.com/ptitSeb/box64/issues/4403) (open, September 2026): on a Pi 4 with recent Box64, crossplay's join-code registration never completes. The loop described there (`begin PlayFab create and join network` followed by `PlayFab reconnect server`, over and over, no join code) is exactly what our log showed while the crossplay library was failing to load, before the audio pieces in section 7 were in place; with them it registered (`registered with join code`). So if you see that loop, look further up the log for `DllNotFoundException: libParty.so`. We haven't confirmed it is the same cause on their setup.
 - [zhmarvi/valheim-arm64](https://github.com/zhmarvi/valheim-arm64): a container and Kubernetes manifests, vanilla, also fetched with DepotDownloader.
 - [benjamin-wiemann/valheim-server-docker-arm64](https://github.com/benjamin-wiemann/valheim-server-docker-arm64): a Docker image with BepInEx support.
 - [husjon/valheim_server_oci_setup](https://github.com/husjon/valheim_server_oci_setup): Valheim on Oracle Cloud's ARM machines.
